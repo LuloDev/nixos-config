@@ -1,26 +1,22 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
+
+let
+  pluginsList = builtins.attrValues (builtins.readDir ./plugins);
+  loadedPlugins = builtins.map (
+    name: (import (./plugins + "/${name}") { inherit pkgs; })
+  ) pluginsList;
+in
 {
   programs.neovim = {
     enable = true;
     vimAlias = true;
 
-    plugins = with pkgs.vimPlugins; [
-      {
-        plugin = catppuccin-nvim;
-        config = ''
-          " Configuración Lua para catppuccin
-          lua << EOF
-          require('catppuccin').setup({
-            flavour = "macchiato", -- latte, frappe, macchiato, mocha
-            transparent_background = true,
-            term_colors = true,
-          })
-          EOF
+    plugins = lib.concatLists loadedPlugins;
 
-          " Aplicar el esquema de color
-          colorscheme catppuccin
-        '';
-      }
-    ];
+    # extraConfig = "...";
   };
 }

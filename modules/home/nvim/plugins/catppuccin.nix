@@ -1,0 +1,18 @@
+{ pkgs, ... }:
+
+[
+  {
+    plugin = pkgs.vimPlugins.catppuccin-nvim;
+    config = ''
+      lua << EOF
+      require('catppuccin').setup({
+        flavour = "macchiato", -- latte, frappe, macchiato, mocha
+        transparent_background = true,
+        term_colors = true,
+      })
+      EOF
+
+      colorscheme catppuccin
+    '';
+  }
+]
