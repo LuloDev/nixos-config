@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   hardware = {
     graphics = {
@@ -12,4 +12,11 @@
     };
   };
   hardware.enableRedistributableFirmware = true;
+  hardware.nvidia.open = false;
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.nvidiaSettings = true;
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+  hardware.bluetooth.enable = true;
 }
