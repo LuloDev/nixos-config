@@ -5,8 +5,12 @@
 
     settings = {
       user = {
-        name = "Frost-Phoenix ";
-        email = "67cyril6767@gmail.com";
+        name = "LuloDev";
+        email = "134250506+LuloDev@users.noreply.github.com";
+        extraConfig = ''
+          user.signingkey A2BBB0665EB6298E
+          commit.gpgsign true
+        '';
       };
 
       init.defaultBranch = "main";
