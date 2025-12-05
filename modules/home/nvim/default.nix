@@ -5,10 +5,14 @@
 }:
 
 let
-  pluginsList = builtins.attrValues (builtins.readDir ./plugins);
+  pluginsNames = builtins.attrNames (builtins.readDir ./plugins);
+
+  nixPluginsNames = lib.filter (name: lib.hasSuffix ".nix" name) pluginsNames;
+
   loadedPlugins = builtins.map (
     name: (import (./plugins + "/${name}") { inherit pkgs; })
-  ) pluginsList;
+  ) nixPluginsNames;
+
 in
 {
   programs.neovim = {
@@ -17,6 +21,5 @@ in
 
     plugins = lib.concatLists loadedPlugins;
 
-    # extraConfig = "...";
   };
 }
