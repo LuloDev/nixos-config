@@ -21,8 +21,13 @@
         59010
         59011
       ];
+      checkReversePath = false;
     };
   };
 
-  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
+  environment.systemPackages = with pkgs; [
+    networkmanagerapplet
+    wireguard-tools
+    protonvpn-gui
+  ];
 }
