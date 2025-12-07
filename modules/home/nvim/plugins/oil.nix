@@ -32,9 +32,6 @@
         },
       })
 
-      vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open Oil (parent dir)" })
-      vim.keymap.set("n", "<leader>E", "<CMD>Oil --float<CR>", { desc = "Open Oil (floating)" })
-
       EOF
     '';
   }
