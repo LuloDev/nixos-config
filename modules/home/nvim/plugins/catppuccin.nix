@@ -7,7 +7,7 @@
       lua << EOF
       require('catppuccin').setup({
         flavour = "macchiato", -- latte, frappe, macchiato, mocha
-        transparent_background = true,
+        transparent_background = false,
         term_colors = true,
       })
       EOF
