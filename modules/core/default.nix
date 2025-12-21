@@ -4,6 +4,7 @@
     ./nixpkgs.nix
     ./bootloader.nix
     ./hardware.nix
+    ./heroic.nix
     ./xserver.nix
     ./network.nix
     ./nh.nix
