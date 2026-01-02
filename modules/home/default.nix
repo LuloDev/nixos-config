@@ -6,6 +6,7 @@
     ./bat.nix # better cat command
     ./browser.nix # firefox based browser
     ./btop.nix # resouces monitor
+    ./btc.nix # btc apps
     ./cava.nix # audio visualizer
     ./discord.nix # discord
     ./fastfetch/fastfetch.nix # fetch tool
@@ -21,7 +22,7 @@
     ./micro.nix # nano replacement
     ./nemo.nix # file manager
     ./nix-search/nix-search.nix # TUI to search nixpkgs
-    ./nvim # neovim editor
+    ./nvim.nix # neovim editor
     ./obsidian.nix
     ./p10k/p10k.nix
     ./packages # other packages
