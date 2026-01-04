@@ -31,7 +31,7 @@
   ];
 
   time.timeZone = "America/Bogota";
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "es_CO.UTF-8";
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.05";
 }
