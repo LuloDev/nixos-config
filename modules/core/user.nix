@@ -14,9 +14,15 @@
     users.${username} = {
       imports =
         if (host == "desktop") then
-          [ ./../home/default.desktop.nix ]
+          [
+            inputs.catppuccin.homeModules.catppuccin
+            ./../home/default.desktop.nix
+          ]
         else
-          [ ./../home ];
+          [
+          inputs.catppuccin.homeModules.catppuccin
+          ./../home
+          ];
       home.username = "${username}";
       home.homeDirectory = "/home/${username}";
       home.stateVersion = "24.05";
@@ -32,7 +38,7 @@
       "networkmanager"
       "wheel"
     ];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
   nix.settings.allowed-users = [ "${username}" ];
 }

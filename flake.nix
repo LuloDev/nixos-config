@@ -12,6 +12,7 @@
 
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    catppuccin.url = "github:catppuccin/nix";
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -29,7 +30,7 @@
   };
 
   outputs =
-    { nixpkgs, self, ... }@inputs:
+    { nixpkgs, self, catppuccin,... }@inputs:
     let
       username = "lulodev";
       system = "x86_64-linux";
@@ -46,7 +47,7 @@
           modules = [ ./hosts/desktop ];
           specialArgs = {
             host = "desktop";
-            inherit self inputs username;
+            inherit self inputs username catppuccin;
           };
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -54,7 +55,7 @@
           modules = [ ./hosts/laptop ];
           specialArgs = {
             host = "laptop";
-            inherit self inputs username;
+            inherit self inputs username catppuccin;
           };
         };
         vm = nixpkgs.lib.nixosSystem {
@@ -62,7 +63,7 @@
           modules = [ ./hosts/vm ];
           specialArgs = {
             host = "vm";
-            inherit self inputs username;
+            inherit self inputs username catppuccin;
           };
         };
       };

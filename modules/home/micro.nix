@@ -4,7 +4,7 @@
     enable = true;
 
     settings = {
-      "colorscheme" = "gruvbox";
+      #"colorscheme" = "gruvbox";
       "*.nix" = {
         "tabsize" = 2;
       };

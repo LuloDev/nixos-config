@@ -30,15 +30,15 @@
         ];
       };
     };
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme.override { color = "green"; };
-    };
-    cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 24;
-    };
+    #iconTheme = {
+    #  name = "Papirus-Dark";
+    #  package = pkgs.papirus-icon-theme.override { color = "green"; };
+    #};
+    #cursorTheme = {
+    #  name = "Bibata-Modern-Ice";
+    #  package = pkgs.bibata-cursors;
+    #  size = 24;
+    #};
   };
 
   home.pointerCursor = {

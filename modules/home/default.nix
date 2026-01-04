@@ -7,9 +7,11 @@
     ./browser.nix # firefox based browser
     ./btop.nix # resouces monitor
     ./btc.nix # btc apps
+    ./catppuccin.nix
     ./cava.nix # audio visualizer
     ./discord.nix # discord
     ./fastfetch/fastfetch.nix # fetch tool
+    ./fish/default.nix # shell
     ./fzf.nix # fuzzy finder
     ./gaming.nix # packages related to gaming
     ./ghostty/ghostty.nix # terminal
@@ -34,6 +36,8 @@
     ./swaylock.nix # lock screen
     ./swayosd.nix # brightness / volume wiget
     ./swaync/swaync.nix # notification deamon
+    ./starship.nix
+    ./tmux.nix
     ./vicinae.nix # launcher
     ./vscodium # vscode fork
     ./waybar # status bar
