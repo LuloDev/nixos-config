@@ -13,6 +13,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     catppuccin.url = "github:catppuccin/nix";
+    llm-agents.url = "github:numtide/llm-agents.nix";
 
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
@@ -30,7 +31,7 @@
   };
 
   outputs =
-    { nixpkgs, self, catppuccin,... }@inputs:
+    { nixpkgs, self, catppuccin, llm-agents,... }@inputs:
     let
       username = "lulodev";
       system = "x86_64-linux";
@@ -47,7 +48,7 @@
           modules = [ ./hosts/desktop ];
           specialArgs = {
             host = "desktop";
-            inherit self inputs username catppuccin;
+            inherit self inputs username catppuccin llm-agents;
           };
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -55,7 +56,7 @@
           modules = [ ./hosts/laptop ];
           specialArgs = {
             host = "laptop";
-            inherit self inputs username catppuccin;
+            inherit self inputs username catppuccin llm-agents;
           };
         };
         vm = nixpkgs.lib.nixosSystem {
@@ -63,7 +64,7 @@
           modules = [ ./hosts/vm ];
           specialArgs = {
             host = "vm";
-            inherit self inputs username catppuccin;
+            inherit self inputs username catppuccin llm-agents;
           };
         };
       };

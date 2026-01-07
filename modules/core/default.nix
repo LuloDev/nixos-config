@@ -8,6 +8,7 @@
     ./xserver.nix
     ./network.nix
     ./nh.nix
+    ./opencode.nix
     ./pipewire.nix
     ./program.nix
     ./security.nix
